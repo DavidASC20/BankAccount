@@ -20,6 +20,15 @@ public class BankAccount{
         return accountID;
     }
     public void setPassword(String pass){
+        password = pass;
+    }
 
+    public boolean deposit(double x){
+        if(x > 0){
+            balance += x;
+            return true;
+        }else{
+            return false;
+        }
     }
 }
