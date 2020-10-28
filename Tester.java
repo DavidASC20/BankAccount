@@ -5,5 +5,7 @@ public class Tester{
         System.out.println(acc1.getBalance());
         System.out.println(acc1.deposit(20));
         System.out.println(acc1.getBalance());
+        System.out.println(acc1.withdraw(17.5));
+        System.out.println(acc1.getBalance());
     }
 }
