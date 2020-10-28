@@ -12,6 +12,12 @@ public class BankAccount{
         balance = 0;
     }
     
+    public String getPassword(){
+        return password;
+    }
     
+    public int getAccountID(){
+        return accountID;
+    }
     
 }
