@@ -40,4 +40,10 @@ public class BankAccount{
             return true;
         }
     }
+
+    public String balanceIDtoString(){
+        String x = Integer.toString(accountID);
+        String y = Double.toString(balance);
+        return x + "\t" + y;
+    }
 }
