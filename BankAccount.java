@@ -1,4 +1,3 @@
-import java.nio.channels.AcceptPendingException;
 
 public class BankAccount{
     //Instance Variables
@@ -6,9 +5,9 @@ public class BankAccount{
     private double balance;
     private int accountID;
 
-    public BankAccount(String a, int b){
-        password = a;
-        accountID = b;
+    public BankAccount(int a, String b){
+        accountID = a;
+        password = b;
         balance = 0;
     }
     
@@ -41,9 +40,22 @@ public class BankAccount{
         }
     }
 
-    public String balanceIDtoString(){
-        String x = Integer.toString(accountID);
-        String y = Double.toString(balance);
-        return x + "\t" + y;
+    public String toString(){
+        String str = "#" + accountID + "\t" + "$" + balance;
+        return str;
+    }
+
+    private boolean authenticate(String password){
+        return password.equals(this.password);
+    }
+
+    public boolean transferTo(BankAccount other, double amount, String password){
+        if(authenticate(password)&& withdraw(amount) ){
+            if(other.deposit(amount)){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
